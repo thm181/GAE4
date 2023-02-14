@@ -1,0 +1,109 @@
+---
+title: "GAE4: Regression"
+author: "Your Name Here"
+format: 
+  html:
+    embed-resources: true
+    toc: true
+    code-tools: true
+
+csl: ecology.csl
+
+editor: visual
+bibliography: references.bib
+---
+
+```{r}
+#| label: SetUp
+#| message: FALSE
+#| echo: FALSE
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+  ) 
+
+library(car)
+library(ggfortify)
+library(patchwork)
+library(broom)
+library(latex2exp)       
+library(kableExtra)
+library(tidyverse)
+
+options(knitr.kable.NA = '')
+```
+
+<!--# This chunk is a work-around to allow left-aligned table captions -->
+
+```{=html}
+<style type="text/css">
+caption, .table-caption {
+  text-align: left;
+}
+</style>
+```
+# Scenario 1: Does littoral coarse woody debris depend on riparian tree density?
+
+@Christiansen.etal1996 studied the relationships between coarse woody debris (CWD) found in the littoral zone of the lakes and shoreline vegetation in a sample of 16 lakes along the border between northern Wisconsin and the upper-peninsula of Michigan. Coarse woody debris is an important habitat feature for many littoral zone fishes as well as for macroinvertebrates and periphyton.
+
+## Methods
+
+The lakes were chosen to span a range of lake development (density of lake shore cabins). They sampled riparian vegetation and CWD abundance on a total of 125 plots at the 16 survey lakes. Within each plot, all live, and standing dead trees (snags) \>5 cm DBH were identified to species and measured for stem diameter. At the same sites, a 40-m line transect (30 m on developed lakes) was established in the water along the 0.5 m depth contour. All CWD \>5 cm in diameter that intersected the line transect was measured. CWD that did not intersect the 0.5 contour was not counted.
+
+```{r importChrist}
+christ <- read_csv(
+  "christ.csv",
+  comment = "#",
+  show_col_types = FALSE
+  )
+
+# Using tolower() to force all variables names to lower case.
+names(christ) <- tolower(names(christ))
+
+# Remember to have a look at the data.frame in the Environment pane to 
+# familiarize yourself with the data. You may also want to open the 
+# .csv file in Excel to see how the variables are defined using
+# comments.
+```
+
+### Statistical Methods
+
+<!-- In this scenario, test for a relationship between CWD and riparian     -->
+
+<!-- tree density. Then describe the relationship.                          -->
+
+<!-- Your statistical methods should be written below these comments.       -->
+
+## Results
+
+<!-- Your code that generates your results could go here along with your    -->
+
+<!-- interpretation of those results. Don't forget to check on assumptions. -->
+
+<!-- Note that while you should check on the assumptions, we very rarely    -->
+
+<!-- include those analyses in the published report.                        -->
+
+# Scenario 2: Does development affect CWD abundance?
+
+The researchers in this study were particularly interested in how shoreline development may have affected coarse woody debris [@Christiansen.etal1996].
+
+## Methods
+
+See methods described above.
+
+### Statistical Methods
+
+<!-- In this scenario, expand on your previous analysis to include the      -->
+
+<!-- effects of cabin density and lake area.                                -->
+
+<!-- In addition to checking the usual diagnostics, remember to look for    -->
+
+<!-- colinearity.                                                           -->
+
+## Results
+
+# References
