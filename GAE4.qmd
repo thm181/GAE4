@@ -46,16 +46,18 @@ caption, .table-caption {
 ```
 # Scenario 1: Does littoral coarse woody debris depend on riparian tree density?
 
-@Christiansen.etal1996 studied the relationships between coarse woody debris (CWD) found in the littoral zone of the lakes and shoreline vegetation in a sample of 16 lakes along the border between northern Wisconsin and the upper-peninsula of Michigan. Coarse woody debris is an important habitat feature for many littoral zone fishes as well as for macroinvertebrates and periphyton.
+@Christiansen.etal1996 studied the relationships between coarse woody debris (CWD) found in the littoral zone[^1] of lakes and shoreline vegetation in a sample of 16 lakes along the border between northern Wisconsin and the upper-peninsula of Michigan. Coarse woody debris is an important habitat feature for many littoral zone fishes as well as for macroinvertebrates and periphyton.
+
+[^1]: The area of a body of water where light can penetrate to the bottom, allowing rooted vegetation to grow.
 
 ## Methods
 
-The lakes were chosen to span a range of lake development (density of lake shore cabins). They sampled riparian vegetation and CWD abundance on a total of 125 plots at the 16 survey lakes. Within each plot, all live, and standing dead trees (snags) \>5 cm DBH were identified to species and measured for stem diameter. At the same sites, a 40-m line transect (30 m on developed lakes) was established in the water along the 0.5 m depth contour. All CWD \>5 cm in diameter that intersected the line transect was measured. CWD that did not intersect the 0.5 contour was not counted.
+The lakes were chosen to span a range of lake development (density of lake shore cabins). They sampled riparian vegetation and CWD abundance on a total of 125 plots at the 16 survey lakes. Within each plot, all live, and standing dead trees (snags) \>5 cm diameter at breast height (DBH) were identified to species and measured for stem diameter. At the same sites, a 40-m line transect (30 m on developed lakes) was established in the water along the 0.5 m depth contour. All CWD \>5 cm in diameter that intersected the line transect was measured. CWD that did not intersect the 0.5 contour was not counted.
 
 ```{r importChrist}
 christ <- read_csv(
   "christ.csv",
-  comment = "#",
+  comment = "#",            # provides a way to have metadata in the .csv file
   show_col_types = FALSE
   )
 
